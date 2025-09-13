@@ -1,0 +1,84 @@
+# 🚀 Dockerize o **Whaticket**
+
+\<br\>
+
+### **Pré-requisitos**
+
+Antes de começar, garanta que você tenha o seguinte:
+
+  * Git instalado em sua máquina.
+  * Docker e Docker Compose configurados.
+  * Acesso ao Portainer.
+-----
+
+## ⚙️ Preparando o Ambiente e Construindo as Imagens
+
+Siga os passos abaixo para preparar seu ambiente e criar as imagens Docker customizadas para o Whaticket.
+
+#### 1\. Acesse o diretório `/opt`
+
+```bash
+cd /opt
+```
+
+#### 2\. Clone o repositório do Whaticket
+
+Execute o comando a seguir. Será necessário informar seu usuário e token do GitHub.
+
+```bash
+git clone https://github.com/launcherbr/whaticketsaas.git whaticket
+```
+
+#### 3\. Acesse a pasta do projeto
+
+```bash
+cd /opt/whaticket
+```
+
+#### 4\. Baixe as modificações para Docker
+
+Para dockerizar esta versão do Whaticket, você precisará de arquivos de configuração específicos. Baixe-os do seguinte repositório:
+
+  * [Link para o repositório de modificações](https://github.com/launcherbr/whaticketdocker)
+
+#### 5\. Copie o conteúdo para o projeto
+
+Após baixar as modificações, copie o conteúdo das pastas `backend` e `frontend` para seus respectivos diretórios na raiz do projeto (`/opt/whaticket`).
+
+#### 6\. Construa as imagens Docker
+
+Com os arquivos no lugar, execute o comando de build:
+
+```bash
+docker compose build
+```
+
+-----
+
+## 🛠️ Configuração e Deploy via Portainer
+
+### ⚠️ **ATENÇÃO: Configuração de Rede** ⚠️
+
+Antes de criar a stack, é crucial configurar a rede no Portainer.
+
+1️⃣ Acesse a aba **"Networks"** no menu lateral do Portainer.
+2️⃣ Clique em **"Add network"** e crie uma rede com o nome: **`whaticket`**.
+3️⃣ Se você utiliza o Traefik, vá até o container dele.
+4️⃣ Role até a seção **"Networks"** e adicione a rede **`whaticket`** que você acabou de criar.
+5️⃣ Salve e reinicie o container, se necessário.
+
+### Deploy da Stack
+
+1️⃣ Abra o **Portainer** e vá até a aba **"Stacks"**.
+2️⃣ Clique em **"Add stack"** para criar uma nova stack.
+3️⃣ Cole o conteúdo do seu arquivo `docker-compose.yml` (ou um arquivo de exemplo como o `example-portainer.yml`) no editor web.
+4️⃣ ✏️ Edite as **URLs**, **senhas** e outras variáveis de ambiente conforme a sua necessidade.
+5️⃣ Clique em **"Deploy the stack"** e aguarde o processo finalizar.
+
+-----
+
+## 🌐 Acesso ao Whaticket
+
+  * **URL Padrão de Acesso:** `https://seusubdominio.seudominio.com.br/login` 
+  * **Usuário Padrão:** `admin@admin.com` 
+  * **Senha Padrão:** `123456` 
