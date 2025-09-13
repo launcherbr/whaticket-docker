@@ -52,7 +52,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.whaticket_backend.rule=Host(`api.suaempresa.com.br`)" # Informe o domínio do backend
       - "traefik.http.routers.whaticket_backend.entrypoints=websecure"
-      - "traefik.http.routers.whaticket_backend.tls.certresolver=leresolver"
+      - "traefik.http.routers.whaticket_backend.tls.certresolver=leresolver" # Informe o nome do resolvedor
       - "traefik.http.middlewares.cors_backend.headers.accessControlAllowOriginList=https://app.suaempresa.com.br" # Informe o domínio do frontend
       - "traefik.http.middlewares.cors_backend.headers.accessControlAllowMethods=GET,HEAD,PUT,PATCH,POST,DELETE"
       - "traefik.http.middlewares.cors_backend.headers.accessControlAllowHeaders=Origin, X-Requested-With, Content-Type, Accept, Authorization"
