@@ -1,7 +1,5 @@
 # 🚀 Dockerize o **Whaticket**
 
-\<br\>
-
 ### **Pré-requisitos**
 
 Antes de começar, garanta que você tenha o seguinte:
