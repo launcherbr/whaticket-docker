@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY package*.json package-lock.json ./
 RUN npm install
 COPY . .
-[cite_start]RUN npm run build [cite: 13]
+RUN npm run build
 
 # Etapa final: serve a aplicação construída com um servidor Node.js/Express
 FROM node:20-alpine
@@ -20,4 +20,4 @@ EXPOSE 3250
 # Comando de inicialização do contêiner
 # 1. Executa o script para substituir as variáveis de ambiente nos arquivos estáticos.
 # 2. Inicia o servidor Express para servir os arquivos.
-[cite_start]CMD ["sh", "-c", "sh ./add-env-vars.sh && node server.js"] [cite: 12]
+CMD ["sh", "-c", "sh ./add-env-vars.sh && node server.js"]
