@@ -37,7 +37,7 @@ cd /opt/whaticket
 
 Para dockerizar esta versão do Whaticket, você precisará de arquivos de configuração específicos. Baixe-os do seguinte repositório:
 
-  * [Link para o repositório de modificações](https://github.com/launcherbr/whaticketdocker)
+  * [Link para o repositório de modificações](https://github.com/launcherbr/whaticket-docker)
 
 #### 5\. Copie o conteúdo para o projeto
 
