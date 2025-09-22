@@ -41,6 +41,9 @@ services:
       - CONNECTIONS_LIMIT=100000
       - CLOSED_SEND_BY_ME=true
 
+      #Empresa
+      - COMPANY_NAME=Whaticket
+
       # E-MAIL
       - MAIL_HOST=smtp.seuprovedor.com # Informe o host SMTP
       - MAIL_USER=seu_email@seudominio.com # Informe o e-mail de envio
@@ -155,3 +158,4 @@ volumes:
   whaticket_frontend_data:
   postgres-data:
   redis-data:
+
