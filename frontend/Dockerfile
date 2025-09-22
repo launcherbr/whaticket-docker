@@ -23,6 +23,7 @@ COPY --from=build-deps /usr/src/app/build ./build
 COPY server.js ./
 COPY add-env-vars.sh ./add-env-vars.sh
 RUN chmod +x add-env-vars.sh
+RUN npm install express@4.18.2
 EXPOSE 3250
 
 # Comando de inicialização do contêiner
