@@ -6,7 +6,7 @@ _replaceBackendEnvVars() {
     echo "Buscando arquivos com valores para alterar...."
 
     # Encontra todos os arquivos que contêm os placeholders.
-    FILES=$(grep -rl "postgres_host_a_ser_mudado\|porta_postgres_a_ser_mudada\|usuario_postgres_a_ser_mudado\|senha_postgres_a_ser_mudada\|nome_postgres_a_ser_mudado\|fuso_horario_a_ser_mudado\|jwt_secreto_a_ser_mudado\|jwt_refresh_secreto_a_ser_mudado\|porta_backend_a_ser_mudada\|porta_proxy_a_ser_mudada\|https://api.example.com\|https://app.example.com\|chrome_args_a_ser_mudado\|redis_uri_a_ser_mudado\|redis_limiter_max_a_ser_mudado\|redis_limiter_duracao_a_ser_mudado\|gerencianet_sandbox_a_ser_mudado\|gerencianet_client_id_a_ser_mudado\|gerencianet_client_secret_a_ser_mudado\|gerencianet_pix_cert_a_ser_mudado\|gerencianet_pix_key_a_ser_mudado\|user_limit_a_ser_mudado\|connections_limit_a_ser_mudado\|closed_send_by_me_a_ser_mudado\|mail_host_a_ser_mudado\|mail_user_a_ser_mudado\|mail_pass_a_ser_mudado\|mail_from_a_ser_mudado\|mail_port_a_ser_mudado" /usr/src/app)
+    FILES=$(grep -rl "postgres_host_a_ser_mudado\|porta_postgres_a_ser_mudada\|usuario_postgres_a_ser_mudado\|senha_postgres_a_ser_mudada\|nome_postgres_a_ser_mudado\|fuso_horario_a_ser_mudado\|jwt_secreto_a_ser_mudado\|jwt_refresh_secreto_a_ser_mudado\|porta_backend_a_ser_mudada\|porta_proxy_a_ser_mudada\|https://api.example.com\|https://app.example.com\|chrome_args_a_ser_mudado\|redis_uri_a_ser_mudado\|redis_limiter_max_a_ser_mudado\|redis_limiter_duracao_a_ser_mudado\|gerencianet_sandbox_a_ser_mudado\|gerencianet_client_id_a_ser_mudado\|gerencianet_client_secret_a_ser_mudado\|gerencianet_pix_cert_a_ser_mudado\|gerencianet_pix_key_a_ser_mudado\|user_limit_a_ser_mudado\|connections_limit_a_ser_mudado\|closed_send_by_me_a_ser_mudado\|company_name_a_ser_mudado\|mail_host_a_ser_mudado\|mail_user_a_ser_mudado\|mail_pass_a_ser_mudado\|mail_from_a_ser_mudado\|mail_port_a_ser_mudado" /usr/src/app)
 
     if [ -z "$FILES" ]; then
         echo "Nenhum arquivo com placeholders encontrado para substituir."
@@ -38,6 +38,7 @@ _replaceBackendEnvVars() {
     ESCAPED_USER_LIMIT=$(printf '%s\n' "$USER_LIMIT" | sed 's:[\\/&]:\\&:g')
     ESCAPED_CONNECTIONS_LIMIT=$(printf '%s\n' "$CONNECTIONS_LIMIT" | sed 's:[\\/&]:\\&:g')
     ESCAPED_CLOSED_SEND_BY_ME=$(printf '%s\n' "$CLOSED_SEND_BY_ME" | sed 's:[\\/&]:\\&:g')
+    ESCAPED_COMPANY_NAME=$(printf '%s\n' "$COMPANY_NAME" | sed 's:[\\/&]:\\&:g')
     ESCAPED_MAIL_HOST=$(printf '%s\n' "$MAIL_HOST" | sed 's:[\\/&]:\\&:g')
     ESCAPED_MAIL_USER=$(printf '%s\n' "$MAIL_USER" | sed 's:[\\/&]:\\&:g')
     ESCAPED_MAIL_PASS=$(printf '%s\n' "$MAIL_PASS" | sed 's:[\\/&]:\\&:g')
@@ -72,6 +73,7 @@ _replaceBackendEnvVars() {
         sed -i "s/user_limit_a_ser_mudado/${ESCAPED_USER_LIMIT}/g" "$FILE"
         sed -i "s/connections_limit_a_ser_mudado/${ESCAPED_CONNECTIONS_LIMIT}/g" "$FILE"
         sed -i "s/closed_send_by_me_a_ser_mudado/${ESCAPED_CLOSED_SEND_BY_ME}/g" "$FILE"
+        sed -i "s/company_name_a_ser_mudado/${ESCAPED_COMPANY_NAME}/g" "$FILE"
         sed -i "s/mail_host_a_ser_mudado/${ESCAPED_MAIL_HOST}/g" "$FILE"
         sed -i "s/mail_user_a_ser_mudado/${ESCAPED_MAIL_USER}/g" "$FILE"
         sed -i "s/mail_pass_a_ser_mudado/${ESCAPED_MAIL_PASS}/g" "$FILE"
