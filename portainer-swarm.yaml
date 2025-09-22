@@ -41,7 +41,7 @@ services:
       - CONNECTIONS_LIMIT=100000
       - CLOSED_SEND_BY_ME=true
 
-      #Empresa
+      # Empresa
       - COMPANY_NAME=Whaticket
 
       # E-MAIL
@@ -158,4 +158,5 @@ volumes:
   whaticket_frontend_data:
   postgres-data:
   redis-data:
+
 
