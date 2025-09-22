@@ -4,6 +4,15 @@ WORKDIR /usr/src/app
 COPY package*.json package-lock.json ./
 RUN npm install
 COPY . .
+
+# Argumentos de build
+ARG REACT_APP_BACKEND_URL=https://api.example.com
+ARG REACT_APP_HOURS_CLOSE_TICKETS_AUTO=hours_ticket_close_auto
+
+# Definir placeholders fixos durante o build
+ENV REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+ENV REACT_APP_HOURS_CLOSE_TICKETS_AUTO=${REACT_APP_HOURS_CLOSE_TICKETS_AUTO}
+
 RUN npm run build
 
 # Etapa final: serve a aplicação construída com um servidor Node.js/Express
