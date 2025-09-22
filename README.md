@@ -70,7 +70,7 @@ Antes de criar a stack, é crucial configurar a rede no Portainer.
 1️⃣ Abra o **Portainer** e vá até a aba **"Stacks"**.</br>
 2️⃣ Clique em **"Add stack"** para criar uma nova stack.</br>
 3️⃣ Cole o conteúdo do seu arquivo `docker-compose.yml` (ou um arquivo de exemplo como o `example-portainer.yml`) no editor web.</br>
-4️⃣ ✏️ Edite as **URLs**, **senhas** e outras variáveis de ambiente conforme a sua necessidade.</br>
+4️⃣ Edite as **URLs**, **senhas** e outras variáveis de ambiente conforme a sua necessidade.</br>
 5️⃣ Clique em **"Deploy the stack"** e aguarde o processo finalizar.</br>
 
 -----
