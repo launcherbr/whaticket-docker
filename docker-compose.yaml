@@ -30,6 +30,7 @@ services:
       - USER_LIMIT=${USER_LIMIT}
       - CONNECTIONS_LIMIT=${CONNECTIONS_LIMIT}
       - CLOSED_SEND_BY_ME=${CLOSED_SEND_BY_ME}
+      - COMPANY_NAME=${COMPANY_NAME}
       - MAIL_HOST=${MAIL_HOST}
       - MAIL_USER=${MAIL_USER}
       - MAIL_PASS=${MAIL_PASS}
@@ -47,3 +48,4 @@ services:
     restart: always
     environment:
       - BACKEND_URL=${BACKEND_URL}
+
