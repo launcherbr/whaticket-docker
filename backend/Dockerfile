@@ -1,5 +1,5 @@
 # Usa uma imagem base do Node.js na versão 20
-FROM node:20 AS build-deps
+FROM node:22 AS build-deps
 
 # Instala dependências do sistema: wget para download e o cliente do PostgreSQL para testes de conexão
 RUN apt-get update && apt-get install -y wget postgresql-client nano
