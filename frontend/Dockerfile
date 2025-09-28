@@ -1,5 +1,5 @@
 # Etapa de build: constrói a aplicação React
-FROM node:20-alpine AS build-deps
+FROM node:22-alpine AS build-deps
 WORKDIR /usr/src/app
 COPY package*.json package-lock.json ./
 RUN npm install
