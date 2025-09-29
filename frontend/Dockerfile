@@ -16,7 +16,7 @@ ENV REACT_APP_HOURS_CLOSE_TICKETS_AUTO=${REACT_APP_HOURS_CLOSE_TICKETS_AUTO}
 RUN npm run build
 
 # Etapa final: serve a aplicação construída com um servidor Node.js/Express
-FROM node:20-alpine
+FROM node:22-alpine
 WORKDIR /usr/src/app
 RUN apk add --no-cache jq nano
 COPY --from=build-deps /usr/src/app/build ./build
